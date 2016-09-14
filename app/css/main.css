@@ -1,0 +1,4 @@
+body {
+  background-color: pink;
+  -webkit-filter: blur(2px);
+          filter: blur(2px); }
