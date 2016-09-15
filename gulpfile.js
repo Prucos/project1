@@ -7,7 +7,9 @@ var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
-var clean = require('del');
+var del = require('del');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglifyjs');
 
 
 gulp.task('sass', function() {
@@ -40,9 +42,19 @@ gulp.task('browserSync', function(){
   })
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'jade'], function () {
+gulp.task('conscripts', function() {
+  return gulp.src([
+    'app/libs/jquery/dist/jquery.min.js',
+    ])
+    .pipe(concat('libs.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('app/js'))
+});
+
+gulp.task('watch', ['browserSync', 'sass', 'jade', 'conscripts'], function () {
   gulp.watch('app/sass/**/*.sass', ['sass']);
   gulp.watch('app/jade/**/*.jade', ['jade']);
+  gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
 // BUILDING DIST STUFF BELOW
@@ -70,4 +82,17 @@ gulp.task('fonts', function() {
 
 gulp.task('clean', function(){
 	return del.sync('dist');
+});
+
+gulp.tast('build', ['fonts', 'clean', 'sass', 'jade', 'scripts'], function() {
+  var buildCss = gulp.src([
+    'app/css/main.css'
+  ])
+  .pipe(gulp.dest('dist/css'));
+
+  var buildJs = gulp.src('app/js/**/*.js')
+  .pipe(gulp.src('dist/js'));
+
+  var buildHtml = gulp.src('app/*.html')
+  .pipe(gulp.dest('dist'));
 });
