@@ -1,5 +1,8 @@
-body
+\:root
   font-size: 16px
+
+body
+  font-size: 1rem
   margin: 0
   -webkit-font-smoothing: antialised
 
@@ -31,7 +34,7 @@ header
   padding-top: 1.5em
 
 .logo
-  font-size: 30px
+  font-size: 1.88rem
   font-family: $mbold
   color: #fff
 
@@ -49,26 +52,29 @@ nav
     li
       list-style-type: none
       margin-left: 3em
+      padding: 0.6em 0
       a
         text-transform: uppercase
         font-size: 14px
         text-decoration: none
         font-family: $mreg
         color: #fff
-        padding-bottom: 0.6em
+        //padding-bottom: 0.6em
         transition: all .2s ease-in-out
         &:hover
           color: $yellow
           cursor: pointer
 
     .active
+      border-bottom: 3px solid $yellow
       a
         color: $yellow
-        border-bottom: 3px solid $yellow
+
   .fa
     color: #fff
     font-size: 20px
     margin-left: 2em
+    padding: 0.6em 0
     &:hover
       cursor: pointer
 h1
@@ -170,8 +176,13 @@ hr
   h1
     font-size: 40px
     margin-top: 1em
+
     span
       font-size: 100px
+      line-height: 90px
+      &:first-child
+        margin-top: 20px
+
   header
     padding: 0 20px
 
@@ -198,6 +209,7 @@ hr
 
   .navbar .fa-bars
     display: block
+    position: relative
 
   nav > ul
     flex-direction: column
@@ -214,7 +226,8 @@ hr
   nav
     display: none
 
-
+  .opened > ul
+    height: 100vh
 
   h1
     font-size: 30px
@@ -223,6 +236,7 @@ hr
     display: inline-block
     span
       font-size: 70px
+      line-height: 65px
 
 
   .slider-wrap
@@ -233,3 +247,21 @@ hr
     font-size: 18px
     span
       font-size: 14px
+
+
+@media (max-width: 465px)
+
+  header
+    padding: 0
+
+  h1
+    font-size: 25px
+    margin-top: 2em
+    span
+      font-size: 55px
+      line-height: 55px
+
+  .box
+    font-size: 0px
+    span
+      font-size: 12px

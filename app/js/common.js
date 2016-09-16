@@ -19,7 +19,7 @@ $(document).ready(function () {
         $(toggler).removeClass(togClass);
         $(toggler).slideUp(300);
     } else {
-      $(toggler).slideDown(300).addClass(togClass);
+      $(toggler).addClass(togClass).slideDown(300).addClass(togClass);
     }
   };
 

@@ -1,5 +1,8 @@
+:root {
+  font-size: 16px; }
+
 body {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
   -webkit-font-smoothing: antialised; }
 
@@ -49,7 +52,7 @@ header {
   padding-top: 1.5em; }
 
 .logo {
-  font-size: 30px;
+  font-size: 1.88rem;
   font-family: "Montserrat-Bold", sans-serif;
   color: #fff; }
 
@@ -72,26 +75,28 @@ nav {
     margin: 0; }
     nav ul li {
       list-style-type: none;
-      margin-left: 3em; }
+      margin-left: 3em;
+      padding: 0.6em 0; }
       nav ul li a {
         text-transform: uppercase;
         font-size: 14px;
         text-decoration: none;
         font-family: "Montserrat-Regular", arial;
         color: #fff;
-        padding-bottom: 0.6em;
         -webkit-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out; }
         nav ul li a:hover {
           color: #fce38a;
           cursor: pointer; }
-    nav ul .active a {
-      color: #fce38a;
+    nav ul .active {
       border-bottom: 3px solid #fce38a; }
+      nav ul .active a {
+        color: #fce38a; }
   nav .fa {
     color: #fff;
     font-size: 20px;
-    margin-left: 2em; }
+    margin-left: 2em;
+    padding: 0.6em 0; }
     nav .fa:hover {
       cursor: pointer; }
 
@@ -201,7 +206,10 @@ hr {
     font-size: 40px;
     margin-top: 1em; }
     h1 span {
-      font-size: 100px; }
+      font-size: 100px;
+      line-height: 90px; }
+      h1 span:first-child {
+        margin-top: 20px; }
   header {
     padding: 0 20px; }
   hr {
@@ -229,7 +237,8 @@ hr {
   nav > .fa {
     display: none; }
   .navbar .fa-bars {
-    display: block; }
+    display: block;
+    position: relative; }
   nav > ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -248,13 +257,16 @@ hr {
       border-bottom: none; }
   nav {
     display: none; }
+  .opened > ul {
+    height: 100vh; }
   h1 {
     font-size: 30px;
     max-width: 400px;
     text-align: center;
     display: inline-block; }
     h1 span {
-      font-size: 70px; }
+      font-size: 70px;
+      line-height: 65px; }
   .slider-wrap {
     position: relative;
     margin-top: 80px; }
@@ -262,6 +274,20 @@ hr {
     font-size: 18px; }
     .box span {
       font-size: 14px; } }
+
+@media (max-width: 465px) {
+  header {
+    padding: 0; }
+  h1 {
+    font-size: 25px;
+    margin-top: 2em; }
+    h1 span {
+      font-size: 55px;
+      line-height: 55px; }
+  .box {
+    font-size: 0px; }
+    .box span {
+      font-size: 12px; } }
 
 @font-face {
   font-family: 'Montserrat-Bold';
