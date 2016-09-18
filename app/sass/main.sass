@@ -205,6 +205,7 @@ hr
 .portfWrap
   display: flex
   .img-wrap
+    overflow: hidden
     &:nth-child(1)
       .about-item
         width: 100%
@@ -225,3 +226,5 @@ hr
         height: 100%
         background-image: url(../img/fdh.png)
         background-size: cover
+    &:hover > .about-item
+      transform: scale(1.5)
