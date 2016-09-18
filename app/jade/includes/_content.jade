@@ -1,1 +1,80 @@
-p content
+mixin featured-img(blockName, faIconName )
+  .img-wrap
+    .about-item
+      .info
+        i(class="fa #{faIconName}")
+        | #{blockName}
+        
+
+mixin numbers(number, advantageName)
+  .number-wrap
+    .number #{number}
+    .advantageName #{advantageName}
+    
+
+mixin services(blockName, faIconName, text)
+  .service-wrap
+    i(class="fa fa-#{faIconName}")
+    .service-text
+      h3 #{blockName}
+      p #{text}
+
+mixin heading (heading, subheading)
+  h2 
+    span #{heading}
+    span #{subheading}
+  hr
+
+
+.main
+  section.about
+    .container
+      .about-wrap
+        +heading("Who are we", "story about us")
+        
+        .text-wrap
+          p   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio necessitatibus in commodi aspernatur. Quos et, totam vitae incidunt voluptates consequuntur ducimus repudiandae, fugit vero, dolores, necessitatibus dolore esse! Omnis, deleniti.
+        
+        .featured
+          +featured-img("Super Team", "fa-user")     
+          +featured-img("Wonderful place", "fa-home")
+          +featured-img("Experienced employees", "fa-graduation-cap")
+        
+  // numbers section
+  section.numbers
+    .container
+      +numbers(44, "Web design project")
+      +numbers(123, "Happy clients")
+      +numbers(15, "awards winner")
+      +numbers(99, "cup of cofee")
+      +numbers(24, "members")
+          
+  section.services
+    .container
+      +heading("What we do", "Our services")
+      
+      .services-wrap
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officia.")
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, illum.")
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, quisquam.")
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, veniam!")
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error.")
+        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, eos.")
+
+  section.allDevices
+    .content-wrap
+      .container
+        +heading("For all devices", "100% Adaptive design")
+        .content
+          img(src="img/tablet.png" alt="responsive" draggable="false")
+          img(src="img/phone.png" alt="mobile" class='phoneImg' draggable="false")
+
+
+  section.portfolio
+    .container
+      +heading("Portfolio", "Examples of our work")
+      .portfWrap
+        +featured-img("Truelenders website", "fa-user")     
+        +featured-img("Prucos studio", "fa-home")
+        +featured-img("FDH logistics", "fa-graduation-cap")
+      

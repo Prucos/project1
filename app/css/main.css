@@ -21,7 +21,7 @@ header {
   cursor: default; }
 
 .hero {
-  max-width: 1000px;
+  max-width: 1200px;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -83,11 +83,17 @@ nav {
         text-decoration: none;
         font-family: "Montserrat-Regular", arial;
         color: #fff;
-        -webkit-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out; }
-        nav ul li a:hover {
-          color: #fce38a;
-          cursor: pointer; }
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
+      nav ul li:hover {
+        color: #fce38a;
+        cursor: pointer;
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2); }
+      nav ul li:hover > a {
+        color: #fce38a;
+        text-shadow: 1px 1px 5px #333; }
     nav ul .active {
       border-bottom: 3px solid #fce38a; }
       nav ul .active a {
@@ -303,3 +309,273 @@ hr {
   font-family: 'KaushanScript-Regular';
   font-style: normal;
   src: url(../fonts/KaushanScript-Regular.ttf); }
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-style: normal;
+  src: url(../fonts/Roboto-Regular.ttf); }
+
+h2 {
+  text-align: center; }
+  h2 span {
+    display: block;
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase; }
+    h2 span:first-child {
+      font-family: "KaushanScript-Regular", helvetica;
+      font-size: 24px;
+      text-transform: none; }
+
+hr {
+  border: 2px solid #f38181;
+  margin-top: 40px;
+  margin-bottom: 45px; }
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 90px;
+  margin-bottom: 100px; }
+
+.about {
+  height: 100%;
+  max-width: 1920px;
+  background-color: #fff; }
+
+.text-wrap {
+  max-width: 960px;
+  text-align: center;
+  display: inline-block; }
+  .text-wrap p {
+    font-size: 15px;
+    color: #999;
+    font-family: "Roboto-Regular", arial; }
+
+.about-wrap {
+  max-width: 1200px;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto; }
+
+.featured {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  aligh-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center; }
+
+.img-wrap {
+  background-color: #95e1d3;
+  width: 380px;
+  height: 250px; }
+  .img-wrap .about-item {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; }
+    .img-wrap .about-item .info {
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 129, 129, 0.9)), to(rgba(252, 227, 138, 0.9)));
+      background-image: -webkit-linear-gradient(rgba(243, 129, 129, 0.9), rgba(252, 227, 138, 0.9));
+      background-image: linear-gradient(rgba(243, 129, 129, 0.9), rgba(252, 227, 138, 0.9));
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-transform: uppercase;
+      font-family: "Montserrat-Bold", sans-serif;
+      color: #fff;
+      font-size: 18px;
+      line-height: 2;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      cursor: default; }
+  .img-wrap:hover > .about-item {
+    -webkit-transform: translate3d(-15px, -15px, 0);
+            transform: translate3d(-15px, -15px, 0); }
+  .img-wrap:hover > .about-item > .info {
+    opacity: 1; }
+  .img-wrap:nth-child(1) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/teambg.png); }
+  .img-wrap:nth-child(2) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/team2bg.png); }
+  .img-wrap:nth-child(3) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/team3bg.png); }
+
+.numbers {
+  background-color: #95e1d3;
+  height: 270px;
+  padding-top: 0px;
+  max-width: 1920px; }
+  .numbers .container {
+    padding-top: 0; }
+
+.number-wrap {
+  height: 100%;
+  width: 240px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-left: 2px solid #a9e7db; }
+
+.number-wrap:last-child {
+  border-right: 2px solid #a9e7db; }
+
+.number {
+  margin: 0 80px;
+  color: #fff;
+  font-size: 72px;
+  font-family: "Montserrat-Bold", sans-serif; }
+
+.advantageName {
+  color: #fff;
+  font-size: 14px;
+  font-family: "Montserrat-Regular", arial; }
+
+.services-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+
+.service-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  max-width: 400px;
+  text-align: left;
+  padding: 50px 0; }
+  .service-wrap i {
+    color: #95e1d3;
+    font-size: 50px;
+    padding: 0 20px; }
+  .service-wrap h3 {
+    text-transform: uppercase;
+    color: #000;
+    font-family: "Montserrat-Regular", arial;
+    font-size: 15px;
+    margin-top: 0px; }
+  .service-wrap p {
+    font-family: "Roboto-Regular", arial;
+    font-size: 15px;
+    color: #999; }
+
+.service-wrap:nth-child(1) {
+  border-bottom: 2px solid #eee; }
+
+.service-wrap:nth-child(2) {
+  border-bottom: 2px solid #eee; }
+
+.service-wrap:nth-child(3) {
+  border-bottom: 2px solid #eee; }
+
+.allDevices {
+  position: relative;
+  background-image: url("../img/devicesbg.png");
+  background-size: cover;
+  background-position: center center;
+  padding: 0; }
+  .allDevices .content-wrap {
+    background-color: rgba(255, 255, 255, 0.85); }
+  .allDevices .content img {
+    display: block;
+    margin: 0 auto; }
+
+.phoneImg {
+  position: absolute;
+  bottom: 0;
+  left: 58%;
+  -webkit-transform: translateY(60px);
+      -ms-transform: translateY(60px);
+          transform: translateY(60px); }
+
+.portfWrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .portfWrap .img-wrap:nth-child(1) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/truelender.png);
+    background-size: cover; }
+  .portfWrap .img-wrap:nth-child(2) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/prucos.png);
+    background-size: cover; }
+  .portfWrap .img-wrap:nth-child(3) .about-item {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/fdh.png);
+    background-size: cover; }
