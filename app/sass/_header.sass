@@ -10,7 +10,7 @@ header
   max-width: 1920px
   height: 980px
   background:
-    image: linear-gradient(to bottom, rgba($pink, .9), rgba($yellow, .9)) ,url('../img/headerBG.png')
+    image: linear-gradient(to bottom, rgba($mainColor, .9), rgba($secondaryColor, .9)) ,url('../img/headerBG.png')
     size: cover
     position: center
   user-select: none
@@ -45,6 +45,8 @@ header
 
 nav
   display: flex
+  transform: translateY(-70px)
+  animation: nav-app 1s ease-out .5s 1 forwards
   ul
     display: flex
     padding: 0
@@ -61,17 +63,17 @@ nav
         color: #fff
         +transition($duration: .3s)
       &:hover
-        color: $yellow
+        color: $secondaryColor
         cursor: pointer
         transform: scale(1.2)
       &:hover > a
-        color: $yellow
+        color: $secondaryColor
         text-shadow: 1px 1px 5px #333
 
     .active
-      border-bottom: 3px solid $yellow
+      border-bottom: 3px solid $secondaryColor
       a
-        color: $yellow
+        color: $secondaryColor
 
   .fa
     color: #fff
@@ -106,6 +108,7 @@ hr
 .cta
   text-align: center
   margin-top: 60px
+  display: inline-block
   a
     color: #fff
     text-decoration: none
@@ -115,9 +118,12 @@ hr
     border: 3px solid #fff
     padding: 0.6em 2.5em
     transition: all .2s ease-in-out
+    transform: scale(1)
     &:hover
-      color: darken($yellow, 10%)
+      color: darken($secondaryColor, 10%)
       background-color: #fff
+  &:hover
+    transform: scale(0.95)
 
 .slider-wrap
   position: absolute
@@ -148,7 +154,7 @@ hr
 .box.active
   opacity: 1
   border-top:
-    color: $pink
+    color: $mainColor
 
 
 @media (max-width: 1090px)
@@ -222,16 +228,20 @@ hr
     align-content: center
     li
       margin-left: 0
+      padding: 5px
     .active
       a
-        color: $yellow
+        color: $secondaryColor
         border-bottom: none
 
   nav
-    display: none
+    opacity: 0
+    pointer-events: none
 
   .opened > ul
     height: 100vh
+    opacity: 1
+    pointer-events: all
 
   h1
     font-size: 30px
@@ -269,3 +279,12 @@ hr
     font-size: 0px
     span
       font-size: 12px
+
+
+@keyframes nav-app
+  0%
+    transform: translateY(-70px)
+    opacity: 0
+  100%
+    transform: translateY(0px)
+    opacity: 1

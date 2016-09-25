@@ -16,10 +16,11 @@ $(document).ready(function () {
 
   function toggleMenu(toggler, togClass) {
     if ($(toggler).hasClass(togClass)) {
-        $(toggler).removeClass(togClass);
         $(toggler).slideUp(300);
+        $(toggler).removeClass(togClass);
+
     } else {
-      $(toggler).addClass(togClass).slideDown(300).addClass(togClass);
+      $(toggler).addClass(togClass).slideDown(300);
     }
   };
 

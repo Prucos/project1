@@ -31,14 +31,14 @@ mixin heading (heading, subheading)
     .container
       .about-wrap
         +heading("Who are we", "story about us")
-        
-        .text-wrap
-          p   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio necessitatibus in commodi aspernatur. Quos et, totam vitae incidunt voluptates consequuntur ducimus repudiandae, fugit vero, dolores, necessitatibus dolore esse! Omnis, deleniti.
-        
-        .featured
-          +featured-img("Super Team", "fa-user")     
-          +featured-img("Wonderful place", "fa-home")
-          +featured-img("Experienced employees", "fa-graduation-cap")
+        .content
+          .text-wrap
+            p   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio necessitatibus in commodi aspernatur. Quos et, totam vitae incidunt voluptates consequuntur ducimus repudiandae, fugit vero, dolores, necessitatibus dolore esse! Omnis, deleniti.
+          
+          .featured
+            +featured-img("Super Team", "fa-user")     
+            +featured-img("Wonderful place", "fa-home")
+            +featured-img("Experienced employees", "fa-graduation-cap")
         
   // numbers section
   section.numbers
@@ -52,14 +52,14 @@ mixin heading (heading, subheading)
   section.services
     .container
       +heading("What we do", "Our services")
-      
-      .services-wrap
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officia.")
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, illum.")
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, quisquam.")
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, veniam!")
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error.")
-        +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, eos.")
+      .content
+        .services-wrap
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, officia.")
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, illum.")
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, quisquam.")
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, veniam!")
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error.")
+          +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, eos.")
 
   section.allDevices
     .content-wrap
@@ -73,8 +73,9 @@ mixin heading (heading, subheading)
   section.portfolio
     .container
       +heading("Portfolio", "Examples of our work")
-      .portfWrap
-        +featured-img("Truelenders website", "fa-user")     
-        +featured-img("Prucos studio", "fa-home")
-        +featured-img("FDH logistics", "fa-graduation-cap")
+      .content
+        .portfWrap
+          +featured-img("Truelenders website", "fa-user")     
+          +featured-img("Prucos studio", "fa-home")
+          +featured-img("FDH logistics", "fa-graduation-cap")
       

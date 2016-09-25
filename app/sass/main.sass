@@ -4,10 +4,19 @@
 @import fonts
 
 
+.container
+  max-width: 1200px
+  height: 100%
+  margin: 0 auto
+  padding-top: 90px
+  margin-bottom: 100px
+  text-align: center
 
 
 h2
+  display: inline-block
   text-align: center
+  animation: headingPop .5s cubic-bezier(.64,.26,.72,1.2) forwards
 
   span
     display: block
@@ -20,17 +29,12 @@ h2
       text-transform: none
 
 hr
-  border: 2px solid $pink
+  border: 2px solid $mainColor
   margin-top: 40px
   margin-bottom: 45px
 
-
-.container
-  max-width: 1200px
-  height: 100%
-  margin: 0 auto
-  padding-top: 90px
-  margin-bottom: 100px
+.content
+  animation: contentPop .5s cubic-bezier(.64,.26,.72,1.2) forwards
 
 .about
   height: 100%
@@ -63,7 +67,7 @@ hr
 
 .img-wrap
   background:
-    color: $turquoise
+    color: $secondaryColor
   width: 380px
   height: 250px
   .about-item
@@ -72,7 +76,7 @@ hr
       opacity: 0
       height: 100%
       width: 100%
-      background-image: linear-gradient(rgba($pink, .9), rgba($yellow, .9))
+      background-color: rgba($mainColor, .9)
       +transition()
       display: flex
       flex-direction: column
@@ -112,7 +116,7 @@ hr
 // Numbers section
 
 .numbers
-  background-color: $turquoise
+  background-color: $secondaryColor
   height: 270px
   padding-top: 0px
   max-width: 1920px
@@ -129,10 +133,10 @@ hr
   align-content: center
   float: left
   box-sizing: border-box
-  border-left: 2px solid lighten($turquoise, 5%)
+  border-left: 2px solid lighten($secondaryColor, 5%)
 
 .number-wrap:last-child
-  border-right: 2px solid lighten($turquoise, 5%)
+  border-right: 2px solid lighten($secondaryColor, 5%)
 
 
 .number
@@ -164,7 +168,7 @@ hr
   text-align: left
   padding: 50px 0
   i
-    color: $turquoise
+    color: $secondaryColor
     font-size: 50px
     padding: 0 20px
   h3
@@ -204,6 +208,7 @@ hr
 
 .portfWrap
   display: flex
+  flex-wrap: wrap
   .img-wrap
     overflow: hidden
     &:nth-child(1)
@@ -228,3 +233,98 @@ hr
         background-size: cover
     &:hover > .about-item
       transform: scale(1.5)
+
+
+@keyframes headingPop
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes contentPop
+  0%
+    opacity: 0
+    transform: translateX(100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+
+// FOOTER GOES BELOW
+
+footer
+  height: 400px
+  background-color: $secondaryColor
+
+
+  .container
+    margin-bottom: 0
+    height: auto
+    color: #fff
+    height: 100%
+    margin: 0 auto
+    padding: 0
+
+
+  .content
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: space-around
+    align-content: space-around
+
+
+
+.sitemap
+  display: flex
+  align-items: center
+  justify-content: center
+  //padding: 0 20px
+  letter-spacing: 1px
+  text-align: center
+  margin-top: 2em
+  ul
+    display: inline-block
+    margin: 0
+    padding-left: 20px
+    font-size: 18px
+    li
+      display: inline
+      text-align: left
+      margin: 5px 20px
+      a
+        text-transform: uppercase
+        text-decoration: none
+        font-family: $mreg
+        color: #fff
+
+
+.contacts
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  height: 100px
+  //padding: 0 20px
+
+  p
+    font-family: $mreg
+    font-style: italic
+    font-size: 15px
+
+.socials
+  display: flex
+  font-size: 60px
+  justify-content: center
+  i
+    color: rgba(#fff, .9)
+    padding: 20px
+    margin: 0 30px
+
+
+.copyR
+  font-family: $mreg
+  border-top: 1px solid #fff
