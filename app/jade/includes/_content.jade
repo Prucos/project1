@@ -27,7 +27,7 @@ mixin heading (heading, subheading)
 
 
 .main
-  section.about
+  section.about#about
     .container
       .about-wrap
         +heading("Who are we", "story about us")
@@ -49,7 +49,7 @@ mixin heading (heading, subheading)
       +numbers(99, "cup of cofee")
       +numbers(24, "members")
           
-  section.services
+  section.services#services
     .container
       +heading("What we do", "Our services")
       .content
@@ -61,7 +61,7 @@ mixin heading (heading, subheading)
           +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, error.")
           +services("NAME", "home", " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, eos.")
 
-  section.allDevices
+  section.allDevices#featured
     .content-wrap
       .container
         +heading("For all devices", "100% Adaptive design")
@@ -70,7 +70,7 @@ mixin heading (heading, subheading)
           img(src="img/phone.png" alt="mobile" class='phoneImg' draggable="false")
 
 
-  section.portfolio
+  section.portfolio#portfolio
     .container
       +heading("Portfolio", "Examples of our work")
       .content

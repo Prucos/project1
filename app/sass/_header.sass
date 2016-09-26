@@ -46,7 +46,6 @@ header
 nav
   display: flex
   transform: translateY(-70px)
-  animation: nav-app 1s ease-out .5s 1 forwards
   ul
     display: flex
     padding: 0
@@ -156,6 +155,12 @@ hr
   border-top:
     color: $mainColor
 
+//MEDIA AND KEYFRAMES BELOW
+
+@media (min-width: 730px)
+  nav
+    animation: nav-app 1s ease-out .5s 1 forwards
+    display: flex
 
 @media (max-width: 1090px)
   .navbar
@@ -205,7 +210,7 @@ hr
     position: relative
     margin-top: 90px
 
-@media (max-width: 670px)
+@media (max-width: 730px)
   header
     height: 100%
 
@@ -235,13 +240,11 @@ hr
         border-bottom: none
 
   nav
-    opacity: 0
-    pointer-events: none
+    display: none
+    transform: translateY(0)
 
   .opened > ul
     height: 100vh
-    opacity: 1
-    pointer-events: all
 
   h1
     font-size: 30px

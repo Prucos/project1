@@ -68,9 +68,7 @@ nav {
   display: flex;
   -webkit-transform: translateY(-70px);
       -ms-transform: translateY(-70px);
-          transform: translateY(-70px);
-  -webkit-animation: nav-app 1s ease-out .5s 1 forwards;
-          animation: nav-app 1s ease-out .5s 1 forwards; }
+          transform: translateY(-70px); }
   nav ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -196,6 +194,15 @@ hr {
   opacity: 1;
   border-top-color: #602e8a; }
 
+@media (min-width: 730px) {
+  nav {
+    -webkit-animation: nav-app 1s ease-out .5s 1 forwards;
+            animation: nav-app 1s ease-out .5s 1 forwards;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
 @media (max-width: 1090px) {
   .navbar {
     -webkit-box-pack: center;
@@ -239,7 +246,7 @@ hr {
     position: relative;
     margin-top: 90px; } }
 
-@media (max-width: 670px) {
+@media (max-width: 730px) {
   header {
     height: 100%; }
   .navbar {
@@ -277,12 +284,12 @@ hr {
       color: #00a67a;
       border-bottom: none; }
   nav {
-    opacity: 0;
-    pointer-events: none; }
+    display: none;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
   .opened > ul {
-    height: 100vh;
-    opacity: 1;
-    pointer-events: all; }
+    height: 100vh; }
   h1 {
     font-size: 30px;
     max-width: 400px;
@@ -770,11 +777,40 @@ footer {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  .socials a {
+    margin: 0 50px; }
   .socials i {
-    color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    margin: 0 30px; }
+    color: rgba(255, 255, 255, 0.9); }
 
 .copyR {
   font-family: "Montserrat-Regular", arial;
   border-top: 1px solid #fff; }
+
+@media (max-width: 800px) {
+  footer .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-top: 20px; }
+  footer .sitemap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px; }
+    footer .sitemap ul li {
+      display: block;
+      list-style: none;
+      margin: 10px; }
+  footer .socials a {
+    margin: 20px; }
+  footer .copyR {
+    width: 100%; } }
